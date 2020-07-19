@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Tabletop from "tabletop";
 import { Card, Button } from "react-bootstrap";
+import Loading from "../../images/loading.gif";
 
 class Home extends Component {
     constructor() {
@@ -8,16 +9,21 @@ class Home extends Component {
         this.state = {
             data: [],
             dataSize: 0,
+            dataLoading: false,
         };
     }
 
     componentDidMount() {
+        this.setState({ dataLoading: true }, () =>
+            console.log("data is loading")
+        );
         Tabletop.init({
             key: process.env.REACT_APP_GOOGLE_SHEET_KEY,
             callback: (googleData) => {
                 this.setState({
                     data: googleData,
                     dataSize: googleData.length,
+                    dataLoading: false,
                 });
             },
             simpleSheet: true,
@@ -28,7 +34,11 @@ class Home extends Component {
         return (
             <div style={{ marginTop: "50px" }}>
                 {this.state.dataSize === 0 ? (
-                    <p>There is not data available</p>
+                    this.state.dataLoading ? (
+                        <img src={Loading} alt="loading data" height="50px" />
+                    ) : (
+                        <p>There is not data available</p>
+                    )
                 ) : (
                     <div
                         style={{
