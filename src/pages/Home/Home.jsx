@@ -31,19 +31,37 @@ class Home extends Component {
                 {this.state.dataSize === 0 ? (
                     <p>There is not data available</p>
                 ) : (
-                    this.state.data.map((item) => (
-                        <Card style={{ width: "18rem" }}>
-                            <Card.Body>
-                                <Card.Title>Day {item.day}</Card.Title>
-                                <Card.Subtitle className="mb-2 text-muted">
-                                    {item.date}
-                                </Card.Subtitle>
-                                <Card.Text>{item.works}</Card.Text>
-                                <Card.Link href="#">Card Link</Card.Link>
-                                <Card.Link href="#">Another Link</Card.Link>
-                            </Card.Body>
-                        </Card>
-                    ))
+                    <div
+                        style={{
+                            display: "flex",
+                            flexWrap: "wrap",
+                            justifyContent: "space-around",
+                            alignItems: "space-around",
+                        }}
+                    >
+                        {this.state.data.map((item) => (
+                            <Card
+                                style={{
+                                    width: "18rem",
+                                    flexBasis: "22%",
+                                    margin: "10px 0 10px 0",
+                                }}
+                            >
+                                <Card.Body>
+                                    <Card.Title>Day {item.day}</Card.Title>
+                                    <Card.Subtitle className="mb-2 text-muted">
+                                        {item.date}
+                                    </Card.Subtitle>
+                                    <Card.Subtitle className="mb-2 text-muted">
+                                        {item.major_topic}
+                                    </Card.Subtitle>
+                                    <Card.Text>{item.works}</Card.Text>
+                                    <Card.Link href="#">Card Link</Card.Link>
+                                    <Card.Link href="#">Another Link</Card.Link>
+                                </Card.Body>
+                            </Card>
+                        ))}
+                    </div>
                 )}
             </div>
         );
