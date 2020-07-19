@@ -4,11 +4,14 @@ const BottomBar = () => {
     return (
         <div
             style={{
-                height: "100px",
-                backgroundColor: "lightgray",
+                height: "20px",
+                backgroundColor: "white",
+                marginTop: "50px",
             }}
         >
-            <p style={{ fontSize: ".7em" }}>Md. Hussainul Islam Sajib</p>
+            <p style={{ fontSize: ".7em" }}>
+                &copy; {process.env.REACT_APP_USER_NAME}
+            </p>
         </div>
     );
 };
