@@ -68,19 +68,35 @@ class Home extends Component {
                                 <Card.Body>
                                     <Card.Title>{item.major_topic}</Card.Title>
                                     <Card.Text>{item.works}</Card.Text>
-                                    <div style={{ width: "100%" }}>
-                                        <Button
-                                            variant="outline-primary"
-                                            size="sm"
-                                            style={{ margin: "5px" }}
-                                        >
-                                            <a
-                                                href=""
-                                                style={{ color: "white" }}
+                                    <div>
+                                        {item.github ? (
+                                            <Button
+                                                variant="info"
+                                                size="sm"
+                                                style={{ margin: "5px" }}
                                             >
-                                                GitHub
-                                            </a>
-                                        </Button>
+                                                <a
+                                                    href={item.github}
+                                                    style={{ color: "white" }}
+                                                >
+                                                    GitHub
+                                                </a>
+                                            </Button>
+                                        ) : null}
+                                        {item.live ? (
+                                            <Button
+                                                variant="info"
+                                                size="sm"
+                                                style={{ margin: "5px" }}
+                                            >
+                                                <a
+                                                    href={item.live}
+                                                    style={{ color: "white" }}
+                                                >
+                                                    Demo
+                                                </a>
+                                            </Button>
+                                        ) : null}
                                     </div>
                                 </Card.Body>
                             </Card>
