@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Tabletop from "tabletop";
-import { Card } from "react-bootstrap";
+import { Card, Button } from "react-bootstrap";
 
 class Home extends Component {
     constructor() {
@@ -40,22 +40,38 @@ class Home extends Component {
                     >
                         {this.state.data.map((item) => (
                             <Card
+                                bg="secondary"
                                 style={{
                                     width: "18rem",
                                     flexBasis: "22%",
                                     margin: "10px 0 10px 0",
                                 }}
                             >
+                                <Card.Header
+                                    style={{
+                                        fontSize: "1.1em",
+                                        color: "white",
+                                    }}
+                                >
+                                    Day {item.day} - {item.date}
+                                </Card.Header>
                                 <Card.Body>
-                                    <Card.Title>
-                                        Day {item.day} - {item.date}
-                                    </Card.Title>
-                                    <Card.Subtitle className="mb-2 text-muted">
-                                        {item.major_topic}
-                                    </Card.Subtitle>
+                                    <Card.Title>{item.major_topic}</Card.Title>
                                     <Card.Text>{item.works}</Card.Text>
-                                    <Card.Link href="#">Card Link</Card.Link>
-                                    <Card.Link href="#">Another Link</Card.Link>
+                                    <div style={{ width: "100%" }}>
+                                        <Button
+                                            variant="outline-primary"
+                                            size="sm"
+                                            style={{ margin: "5px" }}
+                                        >
+                                            <a
+                                                href=""
+                                                style={{ color: "white" }}
+                                            >
+                                                GitHub
+                                            </a>
+                                        </Button>
+                                    </div>
                                 </Card.Body>
                             </Card>
                         ))}
