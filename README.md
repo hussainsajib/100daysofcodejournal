@@ -46,6 +46,7 @@ This is a journal template that tracks the #100DaysOfCode challenge. This journa
 
 ## Hosting the app
 There are few free web hosting platform that you can utilize:
-* [Netlify]()
-
+* [Netlify](https://www.netlify.com/blog/2016/07/22/deploy-react-apps-in-less-than-30-seconds/)
+* [GitHub Pages](https://dev.to/yuribenjamin/how-to-deploy-react-app-in-github-pages-2a1f)
+* [Heroku](https://medium.com/better-programming/how-to-deploy-your-react-app-to-heroku-aedc28b218ae)
 
