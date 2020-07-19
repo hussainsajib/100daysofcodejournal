@@ -26,8 +26,7 @@ class Home extends Component {
 
     render() {
         return (
-            <div>
-                <h1>100 Days of Code</h1>
+            <div style={{ marginTop: "50px" }}>
                 {this.state.dataSize === 0 ? (
                     <p>There is not data available</p>
                 ) : (
@@ -48,10 +47,9 @@ class Home extends Component {
                                 }}
                             >
                                 <Card.Body>
-                                    <Card.Title>Day {item.day}</Card.Title>
-                                    <Card.Subtitle className="mb-2 text-muted">
-                                        {item.date}
-                                    </Card.Subtitle>
+                                    <Card.Title>
+                                        Day {item.day} - {item.date}
+                                    </Card.Title>
                                     <Card.Subtitle className="mb-2 text-muted">
                                         {item.major_topic}
                                     </Card.Subtitle>

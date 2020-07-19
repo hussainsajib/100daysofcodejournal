@@ -2,8 +2,13 @@ import React from "react";
 
 const BottomBar = () => {
     return (
-        <div>
-            <p>This is bottom bar</p>
+        <div
+            style={{
+                height: "100px",
+                backgroundColor: "lightgray",
+            }}
+        >
+            <p style={{ fontSize: ".7em" }}>Md. Hussainul Islam Sajib</p>
         </div>
     );
 };
